@@ -1,0 +1,77 @@
+/* Container Layout */
+.innovation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.text-purple {
+  background: linear-gradient(90deg, #882efd 0%, #b763fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700; /* Makes the color pop more */
+}
+
+/* Individual Card Styling */
+.innovation-card {
+    
+  position: relative;
+  background: rgba(255, 255, 255, 0.03); /* Subtle glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+/* Hover Effects */
+.innovation-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #007bff; /* Primary brand color */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Visual Accents */
+.card-accent {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 40px;
+  height: 4px;
+  background: #007bff;
+  border-radius: 0 0 4px 4px;
+  transition: width 0.4s ease;
+}
+
+.innovation-card:hover .card-accent {
+  width: 80px;
+}
+
+/* Typography */
+.status-tag {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #007bff;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.innovation-card h4 {
+  font-size: 24px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #fff; /* Assumes a dark background */
+}
+
+.innovation-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #a0a0a0;
+  margin: 0;
+}
