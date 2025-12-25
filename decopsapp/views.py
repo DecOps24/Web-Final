@@ -8,3 +8,7 @@ def index(request):
 
 def home_page(request):
     return render(request,"index.html")
+
+def about_us(request):
+    """ about us page view """
+    return render(request, "about_us.html")
