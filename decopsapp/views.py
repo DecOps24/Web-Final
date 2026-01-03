@@ -12,3 +12,7 @@ def home_page(request):
 
 def services(request):
     return render(request,"services.html")
+
+
+def about_us(request):
+    return render(request,"about_us.html")
