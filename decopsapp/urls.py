@@ -5,5 +5,6 @@ from decopsapp import views
 
 urlpatterns = [
     path('',views.index,name='index'),
-    path("about-us/", views.about_us, name="about_us"),
+    path("home_page",views.home_page,name="home_page"),
+    path('services',views.services,name="services")
 ] 
