@@ -8,3 +8,8 @@ def index(request):
 
 def home_page(request):
     return render(request,"index.html")
+
+
+
+def services(request):
+    return render(request,"services.html")
