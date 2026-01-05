@@ -391,6 +391,7 @@ h1 {
     font-size: 0.95rem;
 }
 
+
 /* Purpose Flip Cards */
 .purpose-grid {
     display: grid;
@@ -408,12 +409,16 @@ h1 {
     left: 30px;
     font-size: 6rem;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.05) !important;
-    opacity: 0.05 !important; /* Very faint watermark effect */
+    color: rgba(255, 255, 255, 0.05);
+    opacity: 0.5 ;
     line-height: 0.8;
     pointer-events: none;
 }
 
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px; /* Important for 3D effect */
+}
 
 .flip-card.long-card {
     background-color: transparent;
@@ -449,15 +454,13 @@ h1 {
     justify-content: center;
     padding: 30px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-sizing: border-box;
 }
 
 .flip-card-front {
-    /* background-color: var(--deep-purple);
-    color: white; */
-    background: #1a0b2e
-    /* background-color: #2e1a47; Very dark purple for contrast */
+    background: #2D1B4E;
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(136, 46, 253, 0.3);
     z-index: 2;
 }
 
@@ -469,20 +472,29 @@ h1 {
 }
 
 .flip-card-back {
-    background: linear-gradient(135deg, #6344d4 0%, #a259ff 100%);
+    background: linear-gradient(135deg, #6344d4 0%,#120524 100%);
     z-index: 1;
     /* color: #ffffff; */
     transform: rotateY(180deg);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+
+.flip-card-back::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
 .flip-card-back p {
-    color: #ffffff
+    color: #ffffff;
     font-size: 1.1rem;
     font-weight: 500;
     line-height: 2;
     padding: 20px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     text-align: center;
 }
 
