@@ -9,6 +9,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    {% if messages %}
+    <div id="message-container">
+        {% for message in messages %}
+            <div class="toast {{ message.tags }}">
+                <div class="toast-content">
+                    <div class="pulse-dot"></div>
+                    <span>{{ message }}</span>
+                </div>
+                <button class="toast-close" onclick="this.parentElement.remove()">&times;</button>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 
     <main class="wrapper">
         <section class="hero-section">
@@ -148,32 +161,6 @@
         </section>
 
     </main>
-    <script>
-    function openContactForm() {
-        document.getElementById('contactModal').style.display = 'flex';
-    }
 
-    function closeContactForm() {
-        document.getElementById('contactModal').style.display = 'none';
-    }
-
-    // Close if user clicks outside the glass card
-    window.onclick = function(event) {
-        let modal = document.getElementById('contactModal');
-        if (event.target == modal) {
-            closeContactForm();
-        }
-    }
-    
-    setTimeout(function() {
-    const messages = document.querySelectorAll('.toast');
-    messages.forEach(msg => {
-        msg.style.transition = "opacity 0.5s ease";
-        msg.style.opacity = "0";
-        setTimeout(() => msg.remove(), 500);
-    });
-    }, 2000);
-
-    </script>
 </body>
 </html>
