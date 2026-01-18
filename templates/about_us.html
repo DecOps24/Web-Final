@@ -148,6 +148,32 @@
         </section>
 
     </main>
+    <script>
+    function openContactForm() {
+        document.getElementById('contactModal').style.display = 'flex';
+    }
 
+    function closeContactForm() {
+        document.getElementById('contactModal').style.display = 'none';
+    }
+
+    // Close if user clicks outside the glass card
+    window.onclick = function(event) {
+        let modal = document.getElementById('contactModal');
+        if (event.target == modal) {
+            closeContactForm();
+        }
+    }
+    
+    setTimeout(function() {
+    const messages = document.querySelectorAll('.toast');
+    messages.forEach(msg => {
+        msg.style.transition = "opacity 0.5s ease";
+        msg.style.opacity = "0";
+        setTimeout(() => msg.remove(), 500);
+    });
+    }, 2000);
+
+    </script>
 </body>
 </html>
