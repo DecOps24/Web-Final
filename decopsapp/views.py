@@ -4,7 +4,16 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
+    return HttpResponse("Hello")
+
+
+def home_page(request):
     return render(request,"index.html")
+
+
+def services(request):
+    return render(request,"services.html")
+
 
 def about_us(request):
     """ about us page view """
@@ -24,3 +33,4 @@ def contact_submit(request):
         return redirect('about_us')
     
     return redirect('about_us')
+    return render(request,"about_us.html")
